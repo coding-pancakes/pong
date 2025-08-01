@@ -32,6 +32,12 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+        
+        pygame.draw.rect(screen, COLOR_PURPLE, paddle_1_rect)
+        pygame.draw.rect(screen, COLOR_PURPLE, paddle_2_rect)
+        pygame.draw.rect(screen, COLOR_PURPLE, ball_rect)
+
+        pygame.display.update()
 
 if __name__ == '__main__':
     main()
