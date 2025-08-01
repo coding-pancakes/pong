@@ -25,9 +25,17 @@ def main():
     elif random.randint(1, 2) ==1:
         ball_accel_y *= -1
 
+    clock = pygame.time.Clock()
+    started = False
+
     # Loop
     while True:
         screen.fill(COLOR_BLACK)
+
+        if not started:
+            font = pygame.font.SysFont('Consolas', 30)
+
+            text = font.render('Press Space to Start', True, COLOR_WHITE)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -35,9 +43,11 @@ def main():
         
         pygame.draw.rect(screen, COLOR_PURPLE, paddle_1_rect)
         pygame.draw.rect(screen, COLOR_PURPLE, paddle_2_rect)
-        pygame.draw.rect(screen, COLOR_PURPLE, ball_rect)
+        pygame.draw.rect(screen, COLOR_WHITE, ball_rect)
 
         pygame.display.update()
+
+        delts_time = clock.tick(60)
 
 if __name__ == '__main__':
     main()
@@ -48,3 +58,4 @@ SCREEN_HEIGHT = 720
 
 COLOR_BLACK = (0, 0, 0)
 COLOR_PURPLE = (96, 73, 100)
+COLOR_WHITE = (100, 98, 94)
