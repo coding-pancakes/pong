@@ -36,6 +36,8 @@ def main():
             font = pygame.font.SysFont('Consolas', 30)
 
             text = font.render('Press Space to Start', True, COLOR_WHITE)
+            text_rect = text.get_rect() 
+            text_rect.center = (SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
