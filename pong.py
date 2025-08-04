@@ -38,10 +38,19 @@ def main():
             text = font.render('Press Space to Start', True, COLOR_WHITE)
             text_rect = text.get_rect() 
             text_rect.center = (SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
+            screen.blit(text, text_rect)
+
+            pygame.display.flip()
+
+            clock.tick(60)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                pygame.quit()
                 return
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    started = True
         
         pygame.draw.rect(screen, COLOR_PURPLE, paddle_1_rect)
         pygame.draw.rect(screen, COLOR_PURPLE, paddle_2_rect)
