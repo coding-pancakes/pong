@@ -54,6 +54,14 @@ def main():
         
         if ball_rect.left <= 0 or ball_rect.left >= SCREEN_WIDTH:
             return
+        
+        if ball_rect.top < 0:
+            ball_accel_y *= -1
+            ball_rect.top = 0
+        
+        if ball_rect.bottom > SCREEN_HEIGHT - ball_rect.height:
+            ball_accel_y *= -1
+            ball_rect.top = SCREEN_HEIGHT - ball_rect.height
 
         pygame.draw.rect(screen, COLOR_PURPLE, paddle_1_rect)
         pygame.draw.rect(screen, COLOR_PURPLE, paddle_2_rect)
