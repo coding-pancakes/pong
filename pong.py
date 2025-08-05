@@ -52,6 +52,9 @@ def main():
                 if event.key == pygame.K_SPACE:
                     started = True
         
+        if ball_rect.left <= 0 or ball_rect.left >= SCREEN_WIDTH:
+            return
+
         pygame.draw.rect(screen, COLOR_PURPLE, paddle_1_rect)
         pygame.draw.rect(screen, COLOR_PURPLE, paddle_2_rect)
         pygame.draw.rect(screen, COLOR_WHITE, ball_rect)
