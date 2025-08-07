@@ -73,6 +73,7 @@ def main():
         
         if started:
             ball_rect.left += ball_accel_x * delta_time
+            ball_rect.top += ball_accel_y * delta_time
 
         pygame.draw.rect(screen, COLOR_PURPLE, paddle_1_rect)
         pygame.draw.rect(screen, COLOR_PURPLE, paddle_2_rect)
