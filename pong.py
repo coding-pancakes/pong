@@ -55,9 +55,25 @@ def main():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 return
-            elif event.type == pygame.KEYDOWN:
+            if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     started = True
+                if event.key == pygame.K_w:
+                    paddle_1_move = -0.5
+                if event.key == pygame.K_s:
+                    paddle_1_move = 0.5
+                if event.key == pygame.K_UP:
+                    paddle_2_move = -0.5
+                if event.key == pygame.K_DOWN:
+                    paddle_2_move = 0.5
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_w or event.key == pygame.K_s:
+                    paddle_1_move = 0.0
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_UP or event.key == pygame.K_DOWN:
+                    paddle_2_move = 0.0
+            
+
         
         if ball_rect.left <= 0 or ball_rect.left >= SCREEN_WIDTH:
             return
