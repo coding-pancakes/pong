@@ -70,6 +70,9 @@ def main():
         if paddle_2_rect.colliderect(ball_rect) and paddle_2_rect.left > ball_rect.left:
             ball_accel_x *= -1
             ball_rect.left -= 5
+        
+        if started:
+            ball_rect.left += ball_accel_x * delta_time
 
         pygame.draw.rect(screen, COLOR_PURPLE, paddle_1_rect)
         pygame.draw.rect(screen, COLOR_PURPLE, paddle_2_rect)
@@ -77,7 +80,7 @@ def main():
 
         pygame.display.update()
 
-        delts_time = clock.tick(60)
+        delta_time = clock.tick(60)
 
 if __name__ == '__main__':
     main()
