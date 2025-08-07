@@ -63,7 +63,11 @@ def main():
             ball_accel_y *= -1
             ball_rect.top = SCREEN_HEIGHT - ball_rect.height
         
-        if paddle_1_rect.colliderect(ball_rect) and paddle_2_rect.left > ball_rect.left:
+        if paddle_1_rect.colliderect(ball_rect) and paddle_1_rect.left > ball_rect.left:
+            ball_accel_x *= -1
+            ball_rect.left -= 5
+        
+        if paddle_2_rect.colliderect(ball_rect) and paddle_2_rect.left > ball_rect.left:
             ball_accel_x *= -1
             ball_rect.left -= 5
 
