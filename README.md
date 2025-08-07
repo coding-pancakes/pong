@@ -11,4 +11,4 @@ I started by importing the Pygame and Random modules. Then, I set up the screen 
 ### Stay in the Loop:
 Next, I made a loop that starts with a "Start Game" message and includes defining what keys will move what paddle as well as the direction.  The loop also includes the movement of the ball and the "bounce back" when the ball makes contact with one of the paddles.
 
-(Note: I changed the color of the paddles to be purple instead of white.)
+(📝 I changed the color of the paddles to be purple instead of white.)
