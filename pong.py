@@ -25,7 +25,7 @@ def main():
     ball_rect = pygame.Rect(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 25, 25)
 
     ball_accel_x = random.randint(2, 4) * 0.1
-    ball_accel_x = random.randint(2, 4) * 0.1
+    ball_accel_y = random.randint(2, 4) * 0.1
 
     if random.randint(1, 2) == 1:
         ball_accel_x *= -1
@@ -38,6 +38,13 @@ def main():
     # Loop
     while True:
         screen.fill(COLOR_BLACK)
+        pygame.draw.rect(screen, COLOR_PURPLE, paddle_1_rect)
+        pygame.draw.rect(screen, COLOR_PURPLE, paddle_2_rect)
+        pygame.draw.rect(screen, COLOR_WHITE, ball_rect)
+
+        pygame.display.update()
+
+        delta_time = clock.tick(60)
 
         if not started:
             font = pygame.font.SysFont('Consolas', 30)
@@ -108,14 +115,6 @@ def main():
         if started:
             ball_rect.left += ball_accel_x * delta_time
             ball_rect.top += ball_accel_y * delta_time
-
-        pygame.draw.rect(screen, COLOR_PURPLE, paddle_1_rect)
-        pygame.draw.rect(screen, COLOR_PURPLE, paddle_2_rect)
-        pygame.draw.rect(screen, COLOR_WHITE, ball_rect)
-
-        pygame.display.update()
-
-        delta_time = clock.tick(60)
 
 if __name__ == '__main__':
     main()
