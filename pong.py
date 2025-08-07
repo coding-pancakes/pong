@@ -15,7 +15,7 @@ def main():
     paddle_2_move = 0
 
     #BALL
-    ball_rect = ptgame.Rect(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 25, 25)
+    ball_rect = pygame.Rect(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 25, 25)
 
     ball_accel_x = random.randint(2, 4) * 0.1
     ball_accel_x = random.randint(2, 4) * 0.1
@@ -62,6 +62,10 @@ def main():
         if ball_rect.bottom > SCREEN_HEIGHT - ball_rect.height:
             ball_accel_y *= -1
             ball_rect.top = SCREEN_HEIGHT - ball_rect.height
+        
+        if paddle_1_rect.colliderect(ball_rect) and paddle_2_rect.left > ball_rect.left:
+            ball_accel_x *= -1
+            ball_rect.left -= 5
 
         pygame.draw.rect(screen, COLOR_PURPLE, paddle_1_rect)
         pygame.draw.rect(screen, COLOR_PURPLE, paddle_2_rect)
