@@ -4,7 +4,7 @@ import random
 def main():
     #Setup
     SCREEN_WIDTH = 960
-    SCREEN_HEIGHT = 720
+    SCREEN_HEIGHT = 600
 
     COLOR_BLACK = (0, 0, 0)
     COLOR_PURPLE = (96, 73, 100)
