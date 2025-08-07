@@ -42,8 +42,6 @@ def main():
         pygame.draw.rect(screen, COLOR_PURPLE, paddle_2_rect)
         pygame.draw.rect(screen, COLOR_WHITE, ball_rect)
 
-        pygame.display.update()
-
         delta_time = clock.tick(60)
 
         if not started:
@@ -55,7 +53,6 @@ def main():
             screen.blit(text, text_rect)
 
             pygame.display.flip()
-
             clock.tick(60)
 
         for event in pygame.event.get():
@@ -115,6 +112,8 @@ def main():
         if started:
             ball_rect.left += ball_accel_x * delta_time
             ball_rect.top += ball_accel_y * delta_time
+        
+        pygame.display.update()
 
 if __name__ == '__main__':
     main()
